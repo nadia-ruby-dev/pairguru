@@ -1,0 +1,9 @@
+%h3 Top commenters during the last 7 days
+%table.table
+  %tbody
+    %td User name
+    %td Number of comments left
+    - @top_commenters.each do |c|
+      %tr
+        %td= c.name
+        %td= c.comments.count

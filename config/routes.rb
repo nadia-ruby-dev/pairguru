@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     end
     collection do
       get :export
+      get :top_commenters
     end
     resources :comments
   end
