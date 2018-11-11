@@ -1,0 +1,4 @@
+= form_for [movie, comment] do |f|
+  = f.label :text, "Leave your comment"
+  = f.text_field :text, class: "form-control form-control-comment"
+  = f.submit "Create comment", class: "btn btn-default"
