@@ -21,4 +21,9 @@ class MoviesController < ApplicationController
     MovieExporter.new.call(current_user, file_path)
     redirect_to root_path, notice: "Movies exported"
   end
+
+  def top_commenters
+    @top_commenters = User.joins(:comments).where("comments.created_at": (Time.zone.now - 7.days)..Time.zone.now)
+      .group("users.id").order("COUNT(comments.id) DESC").limit(10)
+  end
 end
