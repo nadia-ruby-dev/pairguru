@@ -3,3 +3,13 @@
   = @movie.description
 - if user_signed_in?
   %p= link_to 'Email me details about this movie', send_info_movie_path(@movie), class: 'btn btn-sm btn-default'
+
+%h3 Comments
+- if user_signed_in? && @movie.comments.where(user: current_user).blank?
+  = render "comments/form", movie: @movie, comment: @comment
+  %br
+- elsif !user_signed_in?
+  %h4 You need to log in to leave a comment
+
+- if @movie.comments.any?
+  = render "comments/comments"

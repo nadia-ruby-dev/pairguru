@@ -27,6 +27,7 @@ group :development do
 end
 
 group :development, :test do
+  gem "byebug"
   gem "capybara"
   gem "factory_bot_rails"
   gem "faker"
@@ -38,4 +39,5 @@ end
 
 group :test do
   gem "shoulda-matchers"
+  gem "capybara-screenshot"
 end

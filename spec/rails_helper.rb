@@ -5,6 +5,8 @@ require File.expand_path("../config/environment", __dir__)
 require "rspec/rails"
 require "pry"
 require "capybara/rails"
+require 'capybara/rspec'
+require 'capybara-screenshot/rspec'
 require "simplecov"
 require "shoulda/matchers"
 SimpleCov.start "rails"
